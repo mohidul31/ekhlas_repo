@@ -14,7 +14,7 @@ import {
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Project2() {
+export default function Project2({ navigation }) {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -41,7 +41,13 @@ export default function Project2() {
                     <Right>
                       <Body>
                         <Button rounded small>
-                          <Text onPress={() => alert(item.description)}>Details</Text>
+                          <Text
+                            onPress={() =>
+                              navigation.navigate("Project2Details", { item })
+                            }
+                          >
+                            Details
+                          </Text>
                         </Button>
                       </Body>
                     </Right>
